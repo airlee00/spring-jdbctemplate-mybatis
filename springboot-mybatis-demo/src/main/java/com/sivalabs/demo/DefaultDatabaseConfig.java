@@ -21,7 +21,8 @@ import com.zaxxer.hikari.HikariDataSource;
 @Configuration
 @Lazy
 @EnableTransactionManagement
-@MapperScan("com.sivalabs.demo.mappers")
+@MapperScan("${scan.mappers}") // -Dscan.mappers=com.sivalabs.demo.mappers
+//@MapperScan("com.sivalabs.demo.mappers")
 class DefaultDatabaseConfig  {
  
     @Autowired
