@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="false" scanPeriod="60 seconds">
+
+	<property name="logMaxHistory" value="10" />
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>debug</level>
+		</filter>
+		<encoder>
+			<pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%5level] %-40.40logger{39}
+				[%4line] : %msg%n%ex{full}</pattern>
+		</encoder>
+	</appender>
+
+
+	<logger name="com.hanatour" level="debug">
+	</logger>
+
+	<logger name="org.springframework.jdbc" level="INFO" />
+
+	<logger name="org.springframework.context.annotation" level="INFO" />
+
+	<logger name="org.springframework.transaction" level="INFO" />
+
+	<logger name="org.apache.http" level="INFO" />
+
+	<logger name="org.mongodb.driver" level="WARN" />
+
+	<!-- SQL logging -->
+	<logger name="org.springframework.jdbc.core.StatementCreatorUtils"
+		level="INFO" />
+	<logger name="java.sql" level="error" />
+	<logger name="jdbc.sqlonly" level="error" />
+	<logger name="jdbc.sqltiming" level="INFO" />
+	<logger name="jdbc.audit" level="error" />
+	<logger name="jdbc.resultset" level="error" />
+
+		<root level="INFO">
+			<appender-ref ref="STDOUT" />
+		</root>
+
+</configuration>
